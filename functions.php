@@ -23,3 +23,25 @@ wp_enqueue_script('jquery');
 wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array(), '5.0.2', true);
 wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array(), '1.0.0', true);
 add_action('wp_enqueue_scripts', 'get_css_js_file');
+
+
+//Theme Function
+function theme_customize_register($wp_customize){
+    $wp_customize->add_section('header_area', array(
+        'title' =>__('Header Area', 'abdullah'),
+        'description' => 'If you interested to update your header area,  you can do it here.'
+    ));
+
+    $wp_customize->add_setting('logo', array(
+        'default' => get_bloginfo('template_directory').'/img/logo.png',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
+        'label' => 'Upload Logo',
+        'description' => 'If you interested, you can change your logo here.',
+        'setting' => 'logo',
+        'section' => 'header_area',
+    )));
+}
+
+add_action('customize_register','theme_customize_register');

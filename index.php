@@ -12,7 +12,22 @@ This template is for displaying the header
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-    
+<div id="header_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="">
+                    <img src="<?php echo get_theme_mod('logo', array(
+                        'default' => get_bloginfo('template_directory' .'./img/logo.png')
+                    ));?>" alt="">
+                </a>
+            </div> 
+            <div class="col-md-9">
+                
+            </div>
+        </div>
+    </div>
+</div>    
 
 <?php wp_footer(); ?>
 </body>
