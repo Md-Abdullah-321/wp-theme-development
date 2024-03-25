@@ -25,6 +25,14 @@ wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array(), '
 add_action('wp_enqueue_scripts', 'get_css_js_file');
 
 
+//Google Fonts Enqueue
+function add_google_fonts(){
+    wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Oswald&display=swap', false);
+}
+add_action('wp_enqueue_scripts', 'add_google_fonts');
+
+
+
 //Theme Function
 function theme_customize_register($wp_customize){
     $wp_customize->add_section('header_area', array(
@@ -45,3 +53,7 @@ function theme_customize_register($wp_customize){
 }
 
 add_action('customize_register','theme_customize_register');
+
+
+//Menu Register
+register_nav_menu('main_menu', __('Main Menu','abdullah'));
