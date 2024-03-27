@@ -1,20 +1,8 @@
-/*******************************************
-Google Fonts
-********************************************/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
-
-/******************************************
-Common CSS
-*******************************************/
+/*=======================================
+ Common CSS
+========================================*/
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-img {
-  max-width: 100%;
+  font-family: "Kaisei Decol", serif;
 }
 h1,
 h2,
@@ -25,61 +13,119 @@ h6 {
   font-family: "Oswald", sans-serif;
   line-height: 1.5em;
 }
+img {
+  max-width: 100%;
+}
 
-/*******************************************
-Header Area Style
-********************************************/
+/*=======================================
+ Header Area Style
+========================================*/
 #header_area {
-  padding: 15px 0px;
+  padding: 15px 0;
 }
 
-#header_area .container .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#nav {
-  width: 100%;
-}
-#nav {
+#header_area .col-md-9 ul {
   font-family: "Oswald", sans-serif;
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  column-gap: 10px;
-}
-
-#nav li {
+  margin: 10px 0 0;
+  padding: 0;
   list-style: none;
-  padding: 7px 15px;
-  border-radius: 5px;
+  text-align: right;
 }
-
-#nav li:hover {
-  background-color: #627254;
+#header_area .col-md-9 ul li {
+  display: inline-block;
+  position: relative;
 }
-#nav li a {
+#header_area .col-md-9 ul li a {
+  color: #262626;
+  padding: 20px 10px;
+  display: block;
+  text-transform: uppercase;
   text-decoration: none;
-  color: black;
-  text-align: center;
 }
-
-#nav li:hover a {
+#header_area .col-md-9 ul li a:hover {
+  background: #ea1a70;
   color: #fff;
 }
 
-/* sub menu  */
-.sub-menu {
-  padding: 7px 15px;
-  border-radius: 5px;
-  float: none;
+/*Dropdown Menu*/
+#header_area .col-md-9 ul li ul {
+  background: #262626 none repeat scroll 0 0;
+  left: -99999px;
+  margin: 0;
   position: absolute;
-  margin-left: -28px;
-  display: none;
-  margin-top: 1px;
+  text-align: left;
+  top: 62px;
+  width: 200px;
+}
+#header_area .col-md-9 ul li:hover ul {
+  left: 0px;
+}
+#header_area .col-md-9 ul li ul li {
+  display: block;
+}
+#header_area .col-md-9 ul li ul li a {
+  color: #fff;
+  padding: 8px 10px;
+}
+#header_area .col-md-9 ul li ul li a:hover {
+  background: #ddd;
+  color: #262626;
+}
+#header_area .col-md-9 ul li:hover a {
+  background: #ea1a70;
+  color: #fff;
+}
+#header_area .col-md-9 ul li:hover ul li a {
+  background: none;
+  color: #fff;
 }
 
-#menu-item-1694:hover .sub-menu {
-  display: block;
+/*Sub Dropdown Menu*/
+#header_area .col-md-9 ul li ul ul {
+  left: -99999px;
+  top: 0;
+  position: absolute;
+}
+#header_area .col-md-9 ul li:hover ul li ul {
+  left: -999999px;
+}
+#header_area .col-md-9 ul li ul li:hover ul {
+  left: 200px;
+}
+#header_area .col-md-9 ul li ul li:hover a {
+  background: #ea1a70;
+  color: #fff;
+}
+#header_area .col-md-9 ul ul li:hover ul li a {
+  background: #262626;
+  color: #fff;
+}
+#header_area .col-md-9 ul ul li ul li a:hover {
+  background: #ea1a70;
+  color: #fff;
+}
+
+/*===========================================
+  Menu Position
+===========================================*/
+#header_area.left_menu .col-md-3 {
+  order: 2;
+}
+#header_area.left_menu .col-md-9 {
+  order: 1;
+}
+#header_area.left_menu .col-md-9 ul {
+  text-align: left;
+}
+
+#header_area.center_menu .col-md-3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#header_area.center_menu .col-md-9 {
+  width: 100%;
+}
+#header_area.center_menu .col-md-9 ul {
+  text-align: center;
 }
