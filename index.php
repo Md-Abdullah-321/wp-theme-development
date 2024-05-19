@@ -12,11 +12,11 @@ This template is for displaying the header
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-<div id="header_area" class="<?php echo get_theme_mod('menu_position');?>">
+<header id="header_area" class="<?php echo get_theme_mod('menu_position');?>">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="">
+                <a href="<?php echo home_url(); ?>">
                     <img src="<?php echo get_theme_mod('logo', array(
                         'default' => get_bloginfo('template_directory' .'./img/logo.png')
                     ));?>" alt="">
@@ -27,7 +27,17 @@ This template is for displaying the header
          </div>
         </div>
     </div>
-</div>    
+</header>    
+
+<section id="body_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <?php the_content(); ?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php wp_footer(); ?>
 </body>
